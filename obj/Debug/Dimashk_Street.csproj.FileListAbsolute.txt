@@ -1,0 +1,13 @@
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.csproj.AssemblyReference.cache
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.Form1.resources
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.Properties.Resources.resources
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.csproj.GenerateResource.cache
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.csproj.CoreCompileInputs.cache
+E:\Hadhod\c#\Dimashk_Street\bin\Debug\Dimashk_Street.exe.config
+E:\Hadhod\c#\Dimashk_Street\bin\Debug\Dimashk_Street.exe
+E:\Hadhod\c#\Dimashk_Street\bin\Debug\Dimashk_Street.pdb
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.exe
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.pdb
+E:\Hadhod\c#\Dimashk_Street\bin\Debug\ClassItemLibrary.dll
+E:\Hadhod\c#\Dimashk_Street\bin\Debug\ClassItemLibrary.pdb
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.csproj.CopyComplete

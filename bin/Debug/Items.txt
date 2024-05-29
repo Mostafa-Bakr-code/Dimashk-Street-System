@@ -1,0 +1,51 @@
+Shawerma#//#55
+Tamya#//#25
+Hot-dog#//#30
+Pizza#//#70
+Sandwich#//#80
+Nuggets#//#40
+Tacos#//#35
+Nachos#//#50
+Kebab#//#60
+Chicken Wings#//#75
+Burrito#//#85
+Onion Rings#//#55
+Falafel#//#65
+Cheesesteak#//#95
+Gyro#//#100
+Mozzarella Sticks#//#70
+Chicken Tenders#//#45
+Chili Cheese Fries#//#90
+Shawarma Wrap#//#75
+Veggie Burger#//#55
+Caesar Salad#//#40
+Pulled Pork Sandwich#//#80
+Fish and Chips#//#65
+Bacon Cheeseburger#//#105
+Veggie Wrap#//#50
+Philly Cheesesteak#//#85
+Loaded Nachos#//#60
+Grilled Chicken Salad#//#30
+Beef Quesadilla#//#95
+French Dip#//#110
+BBQ Chicken Pizza#//#75
+Chicken Caesar Wrap#//#65
+Veggie Quesadilla#//#35
+Turkey Club Sandwich#//#80
+Buffalo Chicken Wrap#//#50
+Spinach Salad#//#45
+Veggie Burrito#//#85
+Southwest Chicken Salad#//#60
+Margherita Pizza#//#100
+California Burger#//#95
+Mushroom Swiss Burger#//#70
+Tofu Stir-Fry#//#40
+BBQ Pulled Pork Sandwich#//#75
+Greek Salad#//#30
+Veggie Stir-Fry#//#25
+Hawaiian Pizza#//#90
+Turkey Burger#//#55
+Caprese Panini#//#65
+scrabled eggs#//#35
+toast#//#110
+Zuccini Flavours#//#55
