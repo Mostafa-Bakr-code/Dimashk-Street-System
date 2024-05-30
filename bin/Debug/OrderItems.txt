@@ -1,1 +1,5 @@
-23/4/2025#//#12:04#//#207#//#1050#//#pizza/40-mushrooms/65
+2024-05-30#//#02:56#//#160#//#1#//#Nachos/50-Nachos/50-Kebab/60
+2024-05-30#//#02:57#//#270#//#2#//#Onion Rings/55-Shawerma/55-Kebab/60-Gyro/100
+2024-05-30#//#02:57#//#85#//#3#//#Burrito/85
+2024-05-30#//#03:02#//#250#//#4#//#Nuggets/40-Pizza/70-Burrito/85-Turkey Burger/55
+2024-05-30#//#03:07#//#1025#//#5#//#Nuggets/40-Nuggets/40-Nuggets/40-Nuggets/40-Sandwich/80-Sandwich/80-Chicken Wings/75-Onion Rings/55-Falafel/65-Cheesesteak/95-Mozzarella Sticks/70-Pizza/70-Tamya/25-Tamya/25-Chicken Tenders/45-Turkey Club Sandwich/80-Veggie Quesadilla/35-Chicken Caesar Wrap/65

@@ -34,6 +34,7 @@ namespace Dimashk_Street
             if (tabControlneworder.SelectedTab != null && tabControlneworder.SelectedTab.Name == "tabcontrolneworders")
             {
                 showListViewTab(listViewNewOrders);
+
             }
 
             if (tabControlneworder.SelectedTab != null && tabControlneworder.SelectedTab.Name == "taborderhistory")
@@ -311,60 +312,21 @@ namespace Dimashk_Street
 
 
         //--------------------------------------------------------------------------------------------------------
-        // New Orders
+        // Orders History Tab
 
-
-        private void btnNewOrdersortlow_Click(object sender, EventArgs e)
-        {
-            SortListViewByPrice(lowToHigh: true, listViewNewOrders);
-        }
-
-        private void btnNewOrdersorthigh_Click(object sender, EventArgs e)
-        {
-            SortListViewByPrice(lowToHigh: false, listViewNewOrders);
-        }
-
-        private void btnNewOrdersortname_Click(object sender, EventArgs e)
-        {
-            SortListViewByName(listViewNewOrders);
-        }
-
-        private void btnNewOrdersortfile_Click(object sender, EventArgs e)
-        {
-            SortListViewByFileOrder(listViewNewOrders);
-        }
-
-        private void listViewNewOrders_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            ListViewItem item = listViewNewOrders.Items[e.Index];
-
-            clsItem clsItem = (clsItem)item.Tag;
-
-            //MessageBox.Show($"Item: {clsItem.Name}, Price: {clsItem.Price}");
-
-            txtOrderItems.Text += clsItem.ConvertItemObjectToLine(clsItem);
-            txtOrderDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
-            txtOrderTime.Text = DateTime.Now.ToString("HH:mm:ss");
-
-
-        }
-
-
-
-        //--------------------------------------------------------------------------------------------------------
-
-    
        public void showListViewHistory(ListView myListView)
         {
-            myListView.Columns.Add("Date", 75);
-            myListView.Columns.Add("Time", 50);
-            myListView.Columns.Add("Total", 50);
-            myListView.Columns.Add("Order Number", 50);
+            myListView.Items.Clear();
+
+            myListView.Columns.Add("Date", 100);
+            myListView.Columns.Add("Time", 100);
+            myListView.Columns.Add("Total", 100);
+            myListView.Columns.Add("Order Number", 100);
             myListView.Columns.Add("Items Details", 300);
 
 
 
-            List<clsOrder> ordersRecordList = clsOrder.LoadDataFromFileToObjList();
+            List<clsOrder> ordersRecordList = clsOrder.LoadDataFromFileToOrderList();
 
 
 
@@ -384,34 +346,89 @@ namespace Dimashk_Street
                 }
 
                 listViewOrders.SubItems.Add(AllOrderItems);
-                listViewOrders.Tag = order;
                 myListView.Items.Add(listViewOrders);
 
             }
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+
+        //--------------------------------------------------------------------------------------------------------
+        // New Order Tab
+
+        void reset()
         {
-            List<clsItem> myitems = new List<clsItem>();
+            btnOrderSubmit.Enabled = false;
+            txtOrderDate.Clear();
+            txtOrderTime.Clear();
+            txtOrderTotal.Clear();
+            txtOrderItems.Clear();
+            txtOrderNumber.Clear();
+        }
 
-            clsItem item1 = new clsItem("pizza", 40);
-            clsItem item2 = new clsItem("mushrooms", 65);
-            myitems.Add(item1); myitems.Add(item2);
+        private void listViewNewOrders_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            ListViewItem item = listViewNewOrders.Items[e.Index];
 
-            clsOrder myorder = new clsOrder("23/4/2025", "12:04", 207, 1050, myitems);
+            clsItem Item = (clsItem)item.Tag;
 
-            btnReset.Tag = myorder;
+            StringBuilder orderItems = new StringBuilder(txtOrderItems.Text);
 
-            MessageBox.Show(clsOrder.ConvertOrderObjectToLine(myorder));
+            if (orderItems.Length > 0 && orderItems[orderItems.Length - 1] != '-')
+            {
+                orderItems.Append('-');
+            }
 
+            orderItems.Append(clsItem.ConvertItemObjectToLine(Item, "/"));
+
+            txtOrderItems.Text = orderItems.ToString();
+
+           
+            if (txtOrderItems.Text.EndsWith("-"))
+            {
+                txtOrderItems.Text = txtOrderItems.Text.TrimEnd('-');
+            }
+
+
+            txtOrderDate.Text = DateTime.Now.ToString("yyyy-MM-dd");
+            txtOrderTime.Text = DateTime.Now.ToString("HH:mm");
+
+            List<clsItem> items = clsOrder.ConvertArrItemsToclsItems(clsOrder.ConvertLineToItemsArr(txtOrderItems.Text));
+
+            float total = clsOrder.getTotal(items);
+
+            txtOrderTotal.Text = total.ToString();
+
+            txtOrderNumber.Text = clsOrder.getOrderNumber().ToString();
+
+            btnOrderSubmit.Enabled = true;
         }
 
         private void btnOrderSubmit_Click(object sender, EventArgs e)
         {
-            List<clsOrder> ordersRecordList = clsOrder.LoadDataFromFileToObjList();
 
-            ordersRecordList.Add((clsOrder)btnReset.Tag);
-            clsOrder.LoadDataFromObrderListToFile(ordersRecordList);
+            string date = txtOrderDate.Text;
+            string time = txtOrderTime.Text;
+           
+            int orderNumber = clsOrder.getOrderNumber();
+            List<clsItem> items = clsOrder.ConvertArrItemsToclsItems(clsOrder.ConvertLineToItemsArr(txtOrderItems.Text));
+
+            float total = clsOrder.getTotal(items);
+
+            clsOrder newOrder = new clsOrder(date, time, total, orderNumber, items);
+            MessageBox.Show(clsOrder.ConvertOrderObjectToLine(newOrder));
+            newOrder.addOrder();
+            reset();
+
+
         }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+
+
+
     }
 }

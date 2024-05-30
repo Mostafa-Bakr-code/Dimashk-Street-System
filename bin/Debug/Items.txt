@@ -1,6 +1,5 @@
 Shawerma#//#55
 Tamya#//#25
-Hot-dog#//#30
 Pizza#//#70
 Sandwich#//#80
 Nuggets#//#40

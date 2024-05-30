@@ -64,7 +64,21 @@
             this.txtnamefordelete = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.taborderhistory = new System.Windows.Forms.TabPage();
+            this.listViewOrderHistory = new System.Windows.Forms.ListView();
             this.tabcontrolneworders = new System.Windows.Forms.TabPage();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnOrderSubmit = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtOrderTotal = new System.Windows.Forms.TextBox();
+            this.txtOrderItems = new System.Windows.Forms.TextBox();
+            this.txtOrderTime = new System.Windows.Forms.TextBox();
+            this.txtOrderDate = new System.Windows.Forms.TextBox();
+            this.txtOrderNumber = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.btnNewOrdersortfile = new System.Windows.Forms.Button();
             this.btnNewOrdersortname = new System.Windows.Forms.Button();
             this.btnNewOrdersorthigh = new System.Windows.Forms.Button();
@@ -73,20 +87,6 @@
             this.tabloginhistory = new System.Windows.Forms.TabPage();
             this.tabadmins = new System.Windows.Forms.TabPage();
             this.tablogout = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtOrderNumber = new System.Windows.Forms.TextBox();
-            this.txtOrderDate = new System.Windows.Forms.TextBox();
-            this.txtOrderTime = new System.Windows.Forms.TextBox();
-            this.txtOrderItems = new System.Windows.Forms.TextBox();
-            this.txtOrderTotal = new System.Windows.Forms.TextBox();
-            this.btnOrderSubmit = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.listViewOrderHistory = new System.Windows.Forms.ListView();
             this.tabControlneworder.SuspendLayout();
             this.tabadditems.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -486,6 +486,16 @@
             this.taborderhistory.Text = "Orders History";
             this.taborderhistory.UseVisualStyleBackColor = true;
             // 
+            // listViewOrderHistory
+            // 
+            this.listViewOrderHistory.HideSelection = false;
+            this.listViewOrderHistory.Location = new System.Drawing.Point(128, 87);
+            this.listViewOrderHistory.Name = "listViewOrderHistory";
+            this.listViewOrderHistory.Size = new System.Drawing.Size(855, 435);
+            this.listViewOrderHistory.TabIndex = 0;
+            this.listViewOrderHistory.UseCompatibleStateImageBehavior = false;
+            this.listViewOrderHistory.View = System.Windows.Forms.View.Details;
+            // 
             // tabcontrolneworders
             // 
             this.tabcontrolneworders.Controls.Add(this.btnReset);
@@ -504,6 +514,126 @@
             this.tabcontrolneworders.Text = "New Order";
             this.tabcontrolneworders.UseVisualStyleBackColor = true;
             // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(601, 417);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(98, 42);
+            this.btnReset.TabIndex = 9;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnOrderSubmit
+            // 
+            this.btnOrderSubmit.Enabled = false;
+            this.btnOrderSubmit.Location = new System.Drawing.Point(722, 405);
+            this.btnOrderSubmit.Name = "btnOrderSubmit";
+            this.btnOrderSubmit.Size = new System.Drawing.Size(216, 66);
+            this.btnOrderSubmit.TabIndex = 8;
+            this.btnOrderSubmit.Text = "Order";
+            this.btnOrderSubmit.UseVisualStyleBackColor = true;
+            this.btnOrderSubmit.Click += new System.EventHandler(this.btnOrderSubmit_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtOrderTotal);
+            this.panel1.Controls.Add(this.txtOrderItems);
+            this.panel1.Controls.Add(this.txtOrderTime);
+            this.panel1.Controls.Add(this.txtOrderDate);
+            this.panel1.Controls.Add(this.txtOrderNumber);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(601, 24);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(337, 354);
+            this.panel1.TabIndex = 7;
+            // 
+            // txtOrderTotal
+            // 
+            this.txtOrderTotal.Location = new System.Drawing.Point(111, 323);
+            this.txtOrderTotal.Name = "txtOrderTotal";
+            this.txtOrderTotal.Size = new System.Drawing.Size(148, 22);
+            this.txtOrderTotal.TabIndex = 17;
+            // 
+            // txtOrderItems
+            // 
+            this.txtOrderItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderItems.Location = new System.Drawing.Point(75, 176);
+            this.txtOrderItems.Multiline = true;
+            this.txtOrderItems.Name = "txtOrderItems";
+            this.txtOrderItems.Size = new System.Drawing.Size(248, 130);
+            this.txtOrderItems.TabIndex = 16;
+            // 
+            // txtOrderTime
+            // 
+            this.txtOrderTime.Location = new System.Drawing.Point(111, 128);
+            this.txtOrderTime.Name = "txtOrderTime";
+            this.txtOrderTime.Size = new System.Drawing.Size(148, 22);
+            this.txtOrderTime.TabIndex = 15;
+            // 
+            // txtOrderDate
+            // 
+            this.txtOrderDate.Location = new System.Drawing.Point(111, 85);
+            this.txtOrderDate.Name = "txtOrderDate";
+            this.txtOrderDate.Size = new System.Drawing.Size(148, 22);
+            this.txtOrderDate.TabIndex = 14;
+            // 
+            // txtOrderNumber
+            // 
+            this.txtOrderNumber.Location = new System.Drawing.Point(111, 45);
+            this.txtOrderNumber.Name = "txtOrderNumber";
+            this.txtOrderNumber.Size = new System.Drawing.Size(148, 22);
+            this.txtOrderNumber.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(27, 329);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 16);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "Total:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(12, 48);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(57, 16);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Order # :";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(27, 186);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(42, 16);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Items:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(28, 128);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 16);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Time:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(30, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(39, 16);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Date:";
+            // 
             // btnNewOrdersortfile
             // 
             this.btnNewOrdersortfile.Location = new System.Drawing.Point(21, 205);
@@ -512,7 +642,6 @@
             this.btnNewOrdersortfile.TabIndex = 6;
             this.btnNewOrdersortfile.Text = "File Order";
             this.btnNewOrdersortfile.UseVisualStyleBackColor = true;
-            this.btnNewOrdersortfile.Click += new System.EventHandler(this.btnNewOrdersortfile_Click);
             // 
             // btnNewOrdersortname
             // 
@@ -522,7 +651,6 @@
             this.btnNewOrdersortname.TabIndex = 5;
             this.btnNewOrdersortname.Text = "A-Z";
             this.btnNewOrdersortname.UseVisualStyleBackColor = true;
-            this.btnNewOrdersortname.Click += new System.EventHandler(this.btnNewOrdersortname_Click);
             // 
             // btnNewOrdersorthigh
             // 
@@ -532,7 +660,6 @@
             this.btnNewOrdersorthigh.TabIndex = 4;
             this.btnNewOrdersorthigh.Text = " Price Highest";
             this.btnNewOrdersorthigh.UseVisualStyleBackColor = true;
-            this.btnNewOrdersorthigh.Click += new System.EventHandler(this.btnNewOrdersorthigh_Click);
             // 
             // btnNewOrdersortlow
             // 
@@ -542,19 +669,18 @@
             this.btnNewOrdersortlow.TabIndex = 3;
             this.btnNewOrdersortlow.Text = " Price lowest";
             this.btnNewOrdersortlow.UseVisualStyleBackColor = true;
-            this.btnNewOrdersortlow.Click += new System.EventHandler(this.btnNewOrdersortlow_Click);
             // 
             // listViewNewOrders
             // 
             this.listViewNewOrders.CheckBoxes = true;
             this.listViewNewOrders.HideSelection = false;
-            this.listViewNewOrders.Location = new System.Drawing.Point(155, 64);
+            this.listViewNewOrders.Location = new System.Drawing.Point(181, 79);
             this.listViewNewOrders.Name = "listViewNewOrders";
-            this.listViewNewOrders.Size = new System.Drawing.Size(242, 481);
+            this.listViewNewOrders.Size = new System.Drawing.Size(253, 392);
             this.listViewNewOrders.TabIndex = 1;
             this.listViewNewOrders.UseCompatibleStateImageBehavior = false;
             this.listViewNewOrders.View = System.Windows.Forms.View.Details;
-
+            this.listViewNewOrders.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.listViewNewOrders_ItemCheck);
             // 
             // tabloginhistory
             // 
@@ -585,135 +711,6 @@
             this.tablogout.TabIndex = 8;
             this.tablogout.Text = "Log Out";
             this.tablogout.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtOrderTotal);
-            this.panel1.Controls.Add(this.txtOrderItems);
-            this.panel1.Controls.Add(this.txtOrderTime);
-            this.panel1.Controls.Add(this.txtOrderDate);
-            this.panel1.Controls.Add(this.txtOrderNumber);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(601, 24);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(337, 354);
-            this.panel1.TabIndex = 7;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 85);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 16);
-            this.label10.TabIndex = 8;
-            this.label10.Text = "Date:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(28, 128);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 16);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "Time:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(27, 186);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(42, 16);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "Items:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(12, 48);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(57, 16);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Order # :";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(27, 329);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(41, 16);
-            this.label14.TabIndex = 12;
-            this.label14.Text = "Total:";
-            // 
-            // txtOrderNumber
-            // 
-            this.txtOrderNumber.Location = new System.Drawing.Point(111, 45);
-            this.txtOrderNumber.Name = "txtOrderNumber";
-            this.txtOrderNumber.Size = new System.Drawing.Size(148, 22);
-            this.txtOrderNumber.TabIndex = 13;
-            // 
-            // txtOrderDate
-            // 
-            this.txtOrderDate.Location = new System.Drawing.Point(111, 85);
-            this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(148, 22);
-            this.txtOrderDate.TabIndex = 14;
-            // 
-            // txtOrderTime
-            // 
-            this.txtOrderTime.Location = new System.Drawing.Point(111, 128);
-            this.txtOrderTime.Name = "txtOrderTime";
-            this.txtOrderTime.Size = new System.Drawing.Size(148, 22);
-            this.txtOrderTime.TabIndex = 15;
-            // 
-            // txtOrderItems
-            // 
-            this.txtOrderItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderItems.Location = new System.Drawing.Point(75, 176);
-            this.txtOrderItems.Multiline = true;
-            this.txtOrderItems.Name = "txtOrderItems";
-            this.txtOrderItems.Size = new System.Drawing.Size(248, 130);
-            this.txtOrderItems.TabIndex = 16;
-            // 
-            // txtOrderTotal
-            // 
-            this.txtOrderTotal.Location = new System.Drawing.Point(111, 323);
-            this.txtOrderTotal.Name = "txtOrderTotal";
-            this.txtOrderTotal.Size = new System.Drawing.Size(148, 22);
-            this.txtOrderTotal.TabIndex = 17;
-            // 
-            // btnOrderSubmit
-            // 
-            this.btnOrderSubmit.Location = new System.Drawing.Point(722, 405);
-            this.btnOrderSubmit.Name = "btnOrderSubmit";
-            this.btnOrderSubmit.Size = new System.Drawing.Size(216, 66);
-            this.btnOrderSubmit.TabIndex = 8;
-            this.btnOrderSubmit.Text = "Order";
-            this.btnOrderSubmit.UseVisualStyleBackColor = true;
-            this.btnOrderSubmit.Click += new System.EventHandler(this.btnOrderSubmit_Click);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Location = new System.Drawing.Point(601, 417);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(98, 42);
-            this.btnReset.TabIndex = 9;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // listViewOrderHistory
-            // 
-            this.listViewOrderHistory.HideSelection = false;
-            this.listViewOrderHistory.Location = new System.Drawing.Point(128, 87);
-            this.listViewOrderHistory.Name = "listViewOrderHistory";
-            this.listViewOrderHistory.Size = new System.Drawing.Size(855, 435);
-            this.listViewOrderHistory.TabIndex = 0;
-            this.listViewOrderHistory.UseCompatibleStateImageBehavior = false;
-            this.listViewOrderHistory.View = System.Windows.Forms.View.Details;
             // 
             // Form1
             // 
