@@ -16,30 +16,98 @@ namespace Dimashk_Street
 {
     public partial class Form1 : Form
     {
+        private TabPage lastAccessedTab;
         public Form1()
         {
             InitializeComponent();
+            DisplayActiveUserName();
+            InitializeDefaultTab();
         }
 
+        private void InitializeDefaultTab()
+        {
+            // Set the default tab to "neworder"
+            lastAccessedTab = tabcontrolmaintab.TabPages["tabcontrolneworders"];
+            tabcontrolmaintab.SelectedTab = lastAccessedTab;
+        }
+        private void DisplayActiveUserName()
+        {
+            string userName = UserSession.ActiveUser?._userName;
+
+            foreach (TabPage tab in tabcontrolmaintab.TabPages)
+            {
+                // Add a label to each tab page to display the username
+                Label userNameLabel = new Label
+                {
+                    Text = $"Logged in as: {userName}",
+                    AutoSize = true,
+                    Location = new System.Drawing.Point(10, 10) 
+                };
+
+                tab.Controls.Add(userNameLabel);
+            }
+        }
+
+
+        private bool hasPermission(int userpermission, int tabpermission)
+        {
+            if((userpermission & tabpermission) == tabpermission)
+            {
+                return true;
+            }
+
+            return false;
+        }
 
         //--------------------------------------------------------------------------------------------------------
         // Changing Tabs
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControlneworder.SelectedTab != null && tabControlneworder.SelectedTab.Name == "tablistitems")
-            {
-                showListViewTab(listView1);
-            }
 
-            if (tabControlneworder.SelectedTab != null && tabControlneworder.SelectedTab.Name == "tabcontrolneworders")
+            if (tabcontrolmaintab.SelectedTab == null) return;
+
+            TabPage selectedTab = tabcontrolmaintab.SelectedTab;
+            bool hasAccess = true;
+            int tabPermission = Convert.ToInt32(selectedTab.Tag ?? 0);
+
+            if (selectedTab.Name == "tablistitems")
+            {
+                hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
+                if (hasAccess)
+                {
+                    showListViewTab(listView1);
+                }
+            }
+            else if (selectedTab.Name == "tabcontrolneworders")
             {
                 showListViewTab(listViewNewOrders);
-
+            }
+            else if (selectedTab.Name == "taborderhistory")
+            {
+                hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
+                if (hasAccess)
+                {
+                    showListViewHistory(listViewOrderHistory);
+                }
+            }
+            else if (selectedTab.Name == "tabadditems" ||
+                     selectedTab.Name == "tabupdateitems" ||
+                     selectedTab.Name == "tabdeleteitems" ||
+                     selectedTab.Name == "tabloginhistory" ||
+                     selectedTab.Name == "tabadmins")
+            {
+                hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
             }
 
-            if (tabControlneworder.SelectedTab != null && tabControlneworder.SelectedTab.Name == "taborderhistory")
+            if (!hasAccess)
             {
-                showListViewHistory(listViewOrderHistory);
+                MessageBox.Show("Access Denied");
+                // Prevent the user from staying on the denied tab
+                tabcontrolmaintab.SelectedTab = lastAccessedTab ?? tabcontrolmaintab.TabPages["tabcontrolneworders"];
+            }
+            else
+            {
+                lastAccessedTab = selectedTab;
             }
         }
 
@@ -427,8 +495,39 @@ namespace Dimashk_Street
             reset();
         }
 
+        //--------------------------------------------------------------------------------------------------------
+        // Admins Tab
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            Form addUserfrm = new AddUser();
+            addUserfrm.Show();
+        }
+
+        private void btnUpdateUser_Click(object sender, EventArgs e)
+        {
+            Form updateUserfrm = new UpdateUser();
+            updateUserfrm.Show();
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            Form deleteUserfrm = new DeleteUser();
+            deleteUserfrm.Show();
+        }
+
+        private void btnListUsers_Click(object sender, EventArgs e)
+        {
+            Form listUsersfrm = new ListUsers();
+            listUsersfrm.Show();
+        }
 
 
+        //--------------------------------------------------------------------------------------------------------
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DisplayActiveUserName();
+        }
     }
 }

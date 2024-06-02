@@ -11,3 +11,8 @@ E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.pdb
 E:\Hadhod\c#\Dimashk_Street\bin\Debug\ClassItemLibrary.dll
 E:\Hadhod\c#\Dimashk_Street\bin\Debug\ClassItemLibrary.pdb
 E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.csproj.CopyComplete
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.AddUser.resources
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.UpdateUser.resources
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.DeleteUser.resources
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.ListUsers.resources
+E:\Hadhod\c#\Dimashk_Street\obj\Debug\Dimashk_Street.LoginScreen.resources

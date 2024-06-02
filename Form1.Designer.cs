@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControlneworder = new System.Windows.Forms.TabControl();
+            this.tabcontrolmaintab = new System.Windows.Forms.TabControl();
             this.tabadditems = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnadditem = new System.Windows.Forms.Button();
@@ -86,8 +86,13 @@
             this.listViewNewOrders = new System.Windows.Forms.ListView();
             this.tabloginhistory = new System.Windows.Forms.TabPage();
             this.tabadmins = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnListUsers = new System.Windows.Forms.Button();
+            this.btnUpdateUser = new System.Windows.Forms.Button();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
+            this.btnAddUser = new System.Windows.Forms.Button();
             this.tablogout = new System.Windows.Forms.TabPage();
-            this.tabControlneworder.SuspendLayout();
+            this.tabcontrolmaintab.SuspendLayout();
             this.tabadditems.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabupdateitems.SuspendLayout();
@@ -99,27 +104,29 @@
             this.taborderhistory.SuspendLayout();
             this.tabcontrolneworders.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabadmins.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControlneworder
+            // tabcontrolmaintab
             // 
-            this.tabControlneworder.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControlneworder.Controls.Add(this.tabadditems);
-            this.tabControlneworder.Controls.Add(this.tabupdateitems);
-            this.tabControlneworder.Controls.Add(this.tablistitems);
-            this.tabControlneworder.Controls.Add(this.tabdeleteitems);
-            this.tabControlneworder.Controls.Add(this.taborderhistory);
-            this.tabControlneworder.Controls.Add(this.tabcontrolneworders);
-            this.tabControlneworder.Controls.Add(this.tabloginhistory);
-            this.tabControlneworder.Controls.Add(this.tabadmins);
-            this.tabControlneworder.Controls.Add(this.tablogout);
-            this.tabControlneworder.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlneworder.Location = new System.Drawing.Point(-4, -3);
-            this.tabControlneworder.Name = "tabControlneworder";
-            this.tabControlneworder.SelectedIndex = 0;
-            this.tabControlneworder.Size = new System.Drawing.Size(1118, 650);
-            this.tabControlneworder.TabIndex = 0;
-            this.tabControlneworder.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
+            this.tabcontrolmaintab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabcontrolmaintab.Controls.Add(this.tabadditems);
+            this.tabcontrolmaintab.Controls.Add(this.tabupdateitems);
+            this.tabcontrolmaintab.Controls.Add(this.tablistitems);
+            this.tabcontrolmaintab.Controls.Add(this.tabdeleteitems);
+            this.tabcontrolmaintab.Controls.Add(this.taborderhistory);
+            this.tabcontrolmaintab.Controls.Add(this.tabcontrolneworders);
+            this.tabcontrolmaintab.Controls.Add(this.tabloginhistory);
+            this.tabcontrolmaintab.Controls.Add(this.tabadmins);
+            this.tabcontrolmaintab.Controls.Add(this.tablogout);
+            this.tabcontrolmaintab.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabcontrolmaintab.Location = new System.Drawing.Point(-4, -3);
+            this.tabcontrolmaintab.Name = "tabcontrolmaintab";
+            this.tabcontrolmaintab.SelectedIndex = 0;
+            this.tabcontrolmaintab.Size = new System.Drawing.Size(1118, 650);
+            this.tabcontrolmaintab.TabIndex = 0;
+            this.tabcontrolmaintab.Tag = "";
+            this.tabcontrolmaintab.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabadditems
             // 
@@ -131,6 +138,7 @@
             this.tabadditems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabadditems.Size = new System.Drawing.Size(1110, 618);
             this.tabadditems.TabIndex = 0;
+            this.tabadditems.Tag = "1";
             this.tabadditems.Text = "Add Items";
             this.tabadditems.UseVisualStyleBackColor = true;
             // 
@@ -213,6 +221,7 @@
             this.tabupdateitems.Padding = new System.Windows.Forms.Padding(3);
             this.tabupdateitems.Size = new System.Drawing.Size(1110, 618);
             this.tabupdateitems.TabIndex = 1;
+            this.tabupdateitems.Tag = "2";
             this.tabupdateitems.Text = "Update Items";
             this.tabupdateitems.UseVisualStyleBackColor = true;
             // 
@@ -328,6 +337,7 @@
             this.tablistitems.Padding = new System.Windows.Forms.Padding(3);
             this.tablistitems.Size = new System.Drawing.Size(1110, 618);
             this.tablistitems.TabIndex = 2;
+            this.tablistitems.Tag = "8";
             this.tablistitems.Text = "List Items";
             this.tablistitems.UseVisualStyleBackColor = true;
             // 
@@ -402,6 +412,7 @@
             this.tabdeleteitems.Padding = new System.Windows.Forms.Padding(3);
             this.tabdeleteitems.Size = new System.Drawing.Size(1110, 618);
             this.tabdeleteitems.TabIndex = 3;
+            this.tabdeleteitems.Tag = "4";
             this.tabdeleteitems.Text = "Delete Items";
             this.tabdeleteitems.UseVisualStyleBackColor = true;
             // 
@@ -483,6 +494,7 @@
             this.taborderhistory.Padding = new System.Windows.Forms.Padding(3);
             this.taborderhistory.Size = new System.Drawing.Size(1110, 618);
             this.taborderhistory.TabIndex = 4;
+            this.taborderhistory.Tag = "64";
             this.taborderhistory.Text = "Orders History";
             this.taborderhistory.UseVisualStyleBackColor = true;
             // 
@@ -689,18 +701,75 @@
             this.tabloginhistory.Padding = new System.Windows.Forms.Padding(3);
             this.tabloginhistory.Size = new System.Drawing.Size(1110, 618);
             this.tabloginhistory.TabIndex = 6;
+            this.tabloginhistory.Tag = "16";
             this.tabloginhistory.Text = "LogIns History";
             this.tabloginhistory.UseVisualStyleBackColor = true;
             // 
             // tabadmins
             // 
+            this.tabadmins.Controls.Add(this.label15);
+            this.tabadmins.Controls.Add(this.btnListUsers);
+            this.tabadmins.Controls.Add(this.btnUpdateUser);
+            this.tabadmins.Controls.Add(this.btnDeleteUser);
+            this.tabadmins.Controls.Add(this.btnAddUser);
             this.tabadmins.Location = new System.Drawing.Point(4, 28);
             this.tabadmins.Name = "tabadmins";
             this.tabadmins.Padding = new System.Windows.Forms.Padding(3);
             this.tabadmins.Size = new System.Drawing.Size(1110, 618);
             this.tabadmins.TabIndex = 7;
+            this.tabadmins.Tag = "32";
             this.tabadmins.Text = "Admins";
             this.tabadmins.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(413, 31);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(210, 31);
+            this.label15.TabIndex = 9;
+            this.label15.Text = " Admin Manager";
+            // 
+            // btnListUsers
+            // 
+            this.btnListUsers.Location = new System.Drawing.Point(134, 452);
+            this.btnListUsers.Name = "btnListUsers";
+            this.btnListUsers.Size = new System.Drawing.Size(149, 70);
+            this.btnListUsers.TabIndex = 3;
+            this.btnListUsers.Text = "List Users";
+            this.btnListUsers.UseVisualStyleBackColor = true;
+            this.btnListUsers.Click += new System.EventHandler(this.btnListUsers_Click);
+            // 
+            // btnUpdateUser
+            // 
+            this.btnUpdateUser.Location = new System.Drawing.Point(134, 251);
+            this.btnUpdateUser.Name = "btnUpdateUser";
+            this.btnUpdateUser.Size = new System.Drawing.Size(149, 70);
+            this.btnUpdateUser.TabIndex = 2;
+            this.btnUpdateUser.Text = "Update User";
+            this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
+            // 
+            // btnDeleteUser
+            // 
+            this.btnDeleteUser.Location = new System.Drawing.Point(134, 352);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(149, 70);
+            this.btnDeleteUser.TabIndex = 1;
+            this.btnDeleteUser.Text = "Delete User";
+            this.btnDeleteUser.UseVisualStyleBackColor = true;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
+            // btnAddUser
+            // 
+            this.btnAddUser.Location = new System.Drawing.Point(134, 147);
+            this.btnAddUser.Name = "btnAddUser";
+            this.btnAddUser.Size = new System.Drawing.Size(149, 70);
+            this.btnAddUser.TabIndex = 0;
+            this.btnAddUser.Text = "Add User";
+            this.btnAddUser.UseVisualStyleBackColor = true;
+            this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // tablogout
             // 
@@ -717,10 +786,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1113, 639);
-            this.Controls.Add(this.tabControlneworder);
+            this.Controls.Add(this.tabcontrolmaintab);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.tabControlneworder.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabcontrolmaintab.ResumeLayout(false);
             this.tabadditems.ResumeLayout(false);
             this.tabadditems.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -741,13 +811,15 @@
             this.tabcontrolneworders.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabadmins.ResumeLayout(false);
+            this.tabadmins.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControlneworder;
+        private System.Windows.Forms.TabControl tabcontrolmaintab;
         private System.Windows.Forms.TabPage tabadditems;
         private System.Windows.Forms.TabPage tabupdateitems;
         private System.Windows.Forms.TabPage tablistitems;
@@ -806,6 +878,11 @@
         private System.Windows.Forms.Button btnOrderSubmit;
         private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.ListView listViewOrderHistory;
+        private System.Windows.Forms.Button btnListUsers;
+        private System.Windows.Forms.Button btnUpdateUser;
+        private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.Button btnAddUser;
+        private System.Windows.Forms.Label label15;
     }
 }
 
