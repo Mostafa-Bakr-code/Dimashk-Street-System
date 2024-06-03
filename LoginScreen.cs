@@ -39,6 +39,9 @@ namespace Dimashk_Street
                 UserSession.SetActiveUser(activeUser);
                 this.Hide();
                 Form form = new Form1();
+
+                
+
                 form.ShowDialog();
                 this.Close();
             }

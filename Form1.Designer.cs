@@ -85,6 +85,8 @@
             this.btnNewOrdersortlow = new System.Windows.Forms.Button();
             this.listViewNewOrders = new System.Windows.Forms.ListView();
             this.tabloginhistory = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.listViewLogs = new System.Windows.Forms.ListView();
             this.tabadmins = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
             this.btnListUsers = new System.Windows.Forms.Button();
@@ -104,6 +106,7 @@
             this.taborderhistory.SuspendLayout();
             this.tabcontrolneworders.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tabloginhistory.SuspendLayout();
             this.tabadmins.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -696,6 +699,8 @@
             // 
             // tabloginhistory
             // 
+            this.tabloginhistory.Controls.Add(this.label16);
+            this.tabloginhistory.Controls.Add(this.listViewLogs);
             this.tabloginhistory.Location = new System.Drawing.Point(4, 28);
             this.tabloginhistory.Name = "tabloginhistory";
             this.tabloginhistory.Padding = new System.Windows.Forms.Padding(3);
@@ -704,6 +709,26 @@
             this.tabloginhistory.Tag = "16";
             this.tabloginhistory.Text = "LogIns History";
             this.tabloginhistory.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(438, 36);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(138, 25);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "LogIn History";
+            // 
+            // listViewLogs
+            // 
+            this.listViewLogs.HideSelection = false;
+            this.listViewLogs.Location = new System.Drawing.Point(117, 132);
+            this.listViewLogs.Name = "listViewLogs";
+            this.listViewLogs.Size = new System.Drawing.Size(803, 365);
+            this.listViewLogs.TabIndex = 1;
+            this.listViewLogs.UseCompatibleStateImageBehavior = false;
+            this.listViewLogs.View = System.Windows.Forms.View.Details;
             // 
             // tabadmins
             // 
@@ -811,6 +836,8 @@
             this.tabcontrolneworders.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.tabloginhistory.ResumeLayout(false);
+            this.tabloginhistory.PerformLayout();
             this.tabadmins.ResumeLayout(false);
             this.tabadmins.PerformLayout();
             this.ResumeLayout(false);
@@ -883,6 +910,8 @@
         private System.Windows.Forms.Button btnDeleteUser;
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ListView listViewLogs;
     }
 }
 

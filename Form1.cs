@@ -97,6 +97,7 @@ namespace Dimashk_Street
             {
                 showListViewTab(listViewNewOrders);
             }
+
             else if (selectedTab.Name == "taborderhistory")
             {
                 hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
@@ -105,10 +106,19 @@ namespace Dimashk_Street
                     showListViewHistory(listViewOrderHistory);
                 }
             }
+
+            else if (selectedTab.Name == "tabloginhistory")
+            {
+                hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
+                if (hasAccess)
+                {
+                    showListViewLogs();
+                }
+            }
+
             else if (selectedTab.Name == "tabadditems" ||
                      selectedTab.Name == "tabupdateitems" ||
                      selectedTab.Name == "tabdeleteitems" ||
-                     selectedTab.Name == "tabloginhistory" ||
                      selectedTab.Name == "tabadmins")
             {
                 hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
@@ -132,8 +142,14 @@ namespace Dimashk_Street
         // List View Methods
         private void showListViewTab(ListView myListView)
         {
-            myListView.Columns.Add("Name", 150); 
-            myListView.Columns.Add("Price", 100); 
+            myListView.Clear();
+
+            if (myListView.Columns.Count == 0) {
+
+                myListView.Columns.Add("Name", 150);
+                myListView.Columns.Add("Price", 100);
+            }
+
 
        
             List<clsItem> itemRecordList = clsItem.LoadDataFromFileToObjList();
@@ -401,11 +417,15 @@ namespace Dimashk_Street
         {
             myListView.Items.Clear();
 
-            myListView.Columns.Add("Date", 100);
-            myListView.Columns.Add("Time", 100);
-            myListView.Columns.Add("Total", 100);
-            myListView.Columns.Add("Order Number", 100);
-            myListView.Columns.Add("Items Details", 300);
+            if(myListView.Columns.Count == 0)
+            {
+                myListView.Columns.Add("Date", 100);
+                myListView.Columns.Add("Time", 100);
+                myListView.Columns.Add("Total", 100);
+                myListView.Columns.Add("Order Number", 100);
+                myListView.Columns.Add("Items Details", 300);
+            }
+
 
 
 
@@ -550,8 +570,48 @@ namespace Dimashk_Street
             
             this.Hide();
             LoginScreen loginForm = new LoginScreen();
+            UserSession.ClearActiveUser();
             loginForm.ShowDialog();                       
             this.Close();
         }
+
+
+        //--------------------------------------------------------------------------------------------------------
+        // LogIns History
+        private void showListViewLogs()
+        {
+            listViewLogs.Items.Clear();
+
+            if (listViewLogs.Columns.Count == 0)
+            {
+                listViewLogs.Columns.Add("LogIn-Date", 100);
+                listViewLogs.Columns.Add("LogIn-Time", 100);
+                listViewLogs.Columns.Add("LogOut-Date", 100);
+                listViewLogs.Columns.Add("LogOut-Time", 100);
+                listViewLogs.Columns.Add("User-Name", 100);
+            }
+
+
+            List<clsLog> logsRecordList = clsLog.LoadDataFromFileToLogList();
+
+
+            foreach (clsLog log in logsRecordList)
+            {
+                ListViewItem listViewItem = new ListViewItem(log._dateIn);
+                listViewItem.SubItems.Add(log._timeIn);
+                listViewItem.SubItems.Add(log._dateOut);
+                listViewItem.SubItems.Add(log._timeOut);
+                listViewItem.SubItems.Add(log._userName);
+
+                listViewLogs.Items.Add(listViewItem);
+
+            }
+        }
+
+  
+
+
+        //--------------------------------------------------------------------------------------------------------
+
     }
 }

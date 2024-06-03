@@ -55,7 +55,7 @@ namespace Dimashk_Street
                         {
 
                             sum = -1;
-                            MessageBox.Show($"Total Sum: {sum}", "Sum of Checked Values", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
                             return sum;
                         }
 
@@ -64,7 +64,7 @@ namespace Dimashk_Street
                 }
             }
 
-            MessageBox.Show($"Total Sum: {sum}", "Sum of Checked Values", MessageBoxButtons.OK, MessageBoxIcon.Information);
+         
 
             return sum;
         }
