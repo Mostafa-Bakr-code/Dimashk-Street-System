@@ -70,6 +70,21 @@ namespace Dimashk_Street
             bool hasAccess = true;
             int tabPermission = Convert.ToInt32(selectedTab.Tag ?? 0);
 
+            if(selectedTab.Name == "tablogout")
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                   
+                    Logout();
+                }
+                else
+                {
+                    
+                    tabcontrolmaintab.SelectedTab = lastAccessedTab ?? tabcontrolmaintab.TabPages["tabcontrolneworders"];
+                }
+            }
+
             if (selectedTab.Name == "tablistitems")
             {
                 hasAccess = hasPermission(UserSession.ActiveUser._permissions, tabPermission);
@@ -528,6 +543,15 @@ namespace Dimashk_Street
         private void Form1_Load(object sender, EventArgs e)
         {
             DisplayActiveUserName();
+        }
+
+        private void Logout()
+        {
+            
+            this.Hide();
+            LoginScreen loginForm = new LoginScreen();
+            loginForm.ShowDialog();                       
+            this.Close();
         }
     }
 }
