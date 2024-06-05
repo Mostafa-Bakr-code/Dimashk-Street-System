@@ -64,6 +64,9 @@
             this.txtnamefordelete = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.taborderhistory = new System.Windows.Forms.TabPage();
+            this.dateTimePickerTo = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFrom = new System.Windows.Forms.DateTimePicker();
+            this.btnTotal = new System.Windows.Forms.Button();
             this.listViewOrderHistory = new System.Windows.Forms.ListView();
             this.tabcontrolneworders = new System.Windows.Forms.TabPage();
             this.btnReset = new System.Windows.Forms.Button();
@@ -94,6 +97,9 @@
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnAddUser = new System.Windows.Forms.Button();
             this.tablogout = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lbshowTotal = new System.Windows.Forms.Label();
             this.tabcontrolmaintab.SuspendLayout();
             this.tabadditems.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -491,6 +497,12 @@
             // 
             // taborderhistory
             // 
+            this.taborderhistory.Controls.Add(this.lbshowTotal);
+            this.taborderhistory.Controls.Add(this.label18);
+            this.taborderhistory.Controls.Add(this.label17);
+            this.taborderhistory.Controls.Add(this.dateTimePickerTo);
+            this.taborderhistory.Controls.Add(this.dateTimePickerFrom);
+            this.taborderhistory.Controls.Add(this.btnTotal);
             this.taborderhistory.Controls.Add(this.listViewOrderHistory);
             this.taborderhistory.Location = new System.Drawing.Point(4, 28);
             this.taborderhistory.Name = "taborderhistory";
@@ -501,12 +513,38 @@
             this.taborderhistory.Text = "Orders History";
             this.taborderhistory.UseVisualStyleBackColor = true;
             // 
+            // dateTimePickerTo
+            // 
+            this.dateTimePickerTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerTo.Location = new System.Drawing.Point(121, 412);
+            this.dateTimePickerTo.Name = "dateTimePickerTo";
+            this.dateTimePickerTo.Size = new System.Drawing.Size(279, 22);
+            this.dateTimePickerTo.TabIndex = 7;
+            // 
+            // dateTimePickerFrom
+            // 
+            this.dateTimePickerFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFrom.Location = new System.Drawing.Point(121, 384);
+            this.dateTimePickerFrom.Name = "dateTimePickerFrom";
+            this.dateTimePickerFrom.Size = new System.Drawing.Size(279, 22);
+            this.dateTimePickerFrom.TabIndex = 6;
+            // 
+            // btnTotal
+            // 
+            this.btnTotal.Location = new System.Drawing.Point(160, 452);
+            this.btnTotal.Name = "btnTotal";
+            this.btnTotal.Size = new System.Drawing.Size(148, 48);
+            this.btnTotal.TabIndex = 4;
+            this.btnTotal.Text = "Total";
+            this.btnTotal.UseVisualStyleBackColor = true;
+            this.btnTotal.Click += new System.EventHandler(this.btnTotal_Click);
+            // 
             // listViewOrderHistory
             // 
             this.listViewOrderHistory.HideSelection = false;
-            this.listViewOrderHistory.Location = new System.Drawing.Point(128, 87);
+            this.listViewOrderHistory.Location = new System.Drawing.Point(121, 67);
             this.listViewOrderHistory.Name = "listViewOrderHistory";
-            this.listViewOrderHistory.Size = new System.Drawing.Size(855, 435);
+            this.listViewOrderHistory.Size = new System.Drawing.Size(816, 255);
             this.listViewOrderHistory.TabIndex = 0;
             this.listViewOrderHistory.UseCompatibleStateImageBehavior = false;
             this.listViewOrderHistory.View = System.Windows.Forms.View.Details;
@@ -806,6 +844,33 @@
             this.tablogout.Text = "Log Out";
             this.tablogout.UseVisualStyleBackColor = true;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(36, 384);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 16);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Date From";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(50, 412);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(56, 16);
+            this.label18.TabIndex = 9;
+            this.label18.Text = "Date To";
+            // 
+            // lbshowTotal
+            // 
+            this.lbshowTotal.AutoSize = true;
+            this.lbshowTotal.Location = new System.Drawing.Point(540, 390);
+            this.lbshowTotal.Name = "lbshowTotal";
+            this.lbshowTotal.Size = new System.Drawing.Size(108, 16);
+            this.lbshowTotal.TabIndex = 10;
+            this.lbshowTotal.Text = "Total will be here";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -833,6 +898,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.taborderhistory.ResumeLayout(false);
+            this.taborderhistory.PerformLayout();
             this.tabcontrolneworders.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -912,6 +978,12 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.ListView listViewLogs;
+        private System.Windows.Forms.Button btnTotal;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFrom;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTo;
+        private System.Windows.Forms.Label lbshowTotal;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
     }
 }
 

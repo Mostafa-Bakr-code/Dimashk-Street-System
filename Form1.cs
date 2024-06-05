@@ -413,7 +413,7 @@ namespace Dimashk_Street
         //--------------------------------------------------------------------------------------------------------
         // Orders History Tab
 
-       public void showListViewHistory(ListView myListView)
+        public void showListViewHistory(ListView myListView)
         {
             myListView.Items.Clear();
 
@@ -451,6 +451,23 @@ namespace Dimashk_Street
                 listViewOrders.SubItems.Add(AllOrderItems);
                 myListView.Items.Add(listViewOrders);
 
+            }
+        }
+
+        private void btnTotal_Click(object sender, EventArgs e)
+        {
+            DateTime dateFrom = dateTimePickerFrom.Value.Date;
+            DateTime dateTo = dateTimePickerTo.Value.Date;
+
+            // Ensure that dateTo is greater than or equal to dateFrom
+            if (dateTo >= dateFrom)
+            {
+                float total = clsOrder.calcTotalinRange(dateFrom, dateTo);
+                lbshowTotal.Text = $"Total from {dateFrom:yyyy-MM-dd} to {dateTo:yyyy-MM-dd} is: {total}";
+            }
+            else
+            {
+                lbshowTotal.Text = "The 'From' date must be before the 'To' date.";
             }
         }
 
@@ -608,7 +625,13 @@ namespace Dimashk_Street
             }
         }
 
-  
+
+
+
+
+
+
+
 
 
         //--------------------------------------------------------------------------------------------------------
